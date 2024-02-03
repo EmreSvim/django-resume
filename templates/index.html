@@ -1,17 +1,18 @@
 {% extends 'layout.html' %}
+{% load static %}
 
 {% block content %}
 
     <div class="row">
         <div class="col-md-12">
-            <h1>Resume App</h1>
+            <h1 class="myHeader">Resume App</h1>
         </div>
     </div>
     <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, iure tempore. Beatae eum exercitationem facilis natus quaerat, repudiandae totam velit! Eaque incidunt, laudantium molestias nemo numquam obcaecati optio voluptas? Officia.</span><span>Aspernatur officia quaerat quia quo reprehenderit soluta tempora! Ab animi delectus dignissimos error, eveniet hic incidunt labore magni neque obcaecati odio optio perspiciatis quidem quisquam ratione, sit unde vel veritatis?</span><span>Cupiditate ipsa nihil officia quibusdam temporibus! Eveniet laborum praesentium rem temporibus. Animi delectus, dicta eos harum hic impedit, iusto laborum, numquam officia quisquam ratione sunt temporibus voluptas. At, dignissimos, quia.</span><span>Accusantium adipisci aliquid blanditiis commodi corporis dicta dolore eaque earum illum incidunt ipsam, nesciunt non omnis quam qui! Ea eaque expedita fuga itaque magnam officiis ratione vel velit. Minus, ut?</span><span>Accusantium aliquam architecto dignissimos dolore dolorem ex magnam natus obcaecati quibusdam repellat, saepe sed sequi unde. Aliquam ipsam itaque laborum natus neque nulla obcaecati unde ut? Sequi temporibus tenetur vero.</span><span>A ad alias, consequatur dignissimos doloremque harum ipsum mollitia nam neque, nihil odio quaerat quis, ratione sequi tempora ullam vel! Aperiam aut culpa deserunt excepturi minus nobis quas rem, totam?</span><span>Ab accusantium, alias assumenda blanditiis corporis ducimus enim, eos esse facilis fugit laudantium minus modi nisi odit quae, quasi reprehenderit tenetur voluptates? Amet, aspernatur eius labore pariatur qui tenetur voluptates!</span><span>At beatae dolorum exercitationem facere maxime mollitia odit quas quo reprehenderit sint. Dicta earum maiores nemo nobis. Autem culpa distinctio eligendi molestias nihil nulla obcaecati reiciendis rem, repellat repudiandae vero.</span><span>Ad est eum excepturi facere fuga incidunt laboriosam minus nobis recusandae tenetur. Architecto dignissimos nam officiis? Enim ipsum natus officiis omnis placeat sunt voluptates. Accusantium ad inventore laudantium rem sunt.</span><span>Dolorum enim sequi voluptates? Animi architecto autem corporis culpa delectus dolor dolorem ea enim eos facere illum ipsam laudantium nihil officia officiis quae quas quis quos soluta suscipit, ut vitae.</span>
     </p>
 
     <div class="card" style="width: 18rem;">
-        <img src="https://via.placeholder.com/450x300.png" class="card-img-top" alt="...">
+        <img src="{% get_media_prefix %}ben.JPG" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's

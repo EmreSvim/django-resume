@@ -6,7 +6,7 @@ class GeneralSetting(models.Model):
         default='',
         max_length=254,
         blank=True,
-        verbose_name="Name Test",
+        verbose_name="Name",
         help_text="This is variable pf the setting.",
     )
     description = models.CharField(

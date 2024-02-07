@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from core.models import GeneralSetting, ImageSetting
+from core.models import GeneralSetting, ImageSetting, Skill
+
 
 # Create your views here.
 
@@ -16,6 +17,9 @@ def index(request):
     #images
     home_banner_image = ImageSetting.objects.get(name='home_banner_image').file
 
+    #skills
+    skills = Skill.objects.all().order_by('-percentage')
+
     context = {
         'site_title': site_title,
         'site_keywords': site_keywords,
@@ -26,6 +30,7 @@ def index(request):
         'about_myself_welcome': about_myself_welcome,
         'about_myself_footer': about_myself_footer,
         'home_banner_image': home_banner_image,
+        'skills': skills,
     }
 
     return render(request, 'index.html', context=context)

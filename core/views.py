@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import GeneralSetting, ImageSetting, Skill
+from core.models import GeneralSetting, ImageSetting, Skill, Experience
 
 
 # Create your views here.
@@ -20,6 +20,9 @@ def index(request):
     #skills
     skills = Skill.objects.all().order_by('-percentage')
 
+    # experiences
+    experiences = Experience.objects.all()
+
     context = {
         'site_title': site_title,
         'site_keywords': site_keywords,
@@ -31,6 +34,7 @@ def index(request):
         'about_myself_footer': about_myself_footer,
         'home_banner_image': home_banner_image,
         'skills': skills,
+        'experiences': experiences,
     }
 
     return render(request, 'index.html', context=context)

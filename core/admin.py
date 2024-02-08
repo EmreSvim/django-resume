@@ -42,3 +42,11 @@ class EducationAdmin(admin.ModelAdmin):
     list_editable = ['school_name', 'major', 'department', 'start_date', 'end_date']
     class Meta:
         model = Education
+
+@admin.register(Document)
+class DocumentAdmin(admin.ModelAdmin):
+    list_display = ['id', 'slug', 'button_text', 'file', 'updated_date', 'created_date']
+    search_fields = ['slug', 'button_text']
+    list_editable = ['slug', 'button_text', 'file']
+    class Meta:
+        model = Document

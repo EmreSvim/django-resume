@@ -4,7 +4,7 @@ from core.models import GeneralSetting, ImageSetting, Skill, Experience, Educati
 
 # Create your views here.
 
-def index(request):
+def layout(request):
     site_title = GeneralSetting.objects.get(name='site_title').parameter
     site_keywords = GeneralSetting.objects.get(name='site_keywords').parameter
     site_description = GeneralSetting.objects.get(name='site_description').parameter
@@ -14,19 +14,9 @@ def index(request):
     about_myself_welcome = GeneralSetting.objects.get(name='about_myself_welcome').parameter
     about_myself_footer = GeneralSetting.objects.get(name='about_myself_footer').parameter
 
-    #images
+    # images
     home_banner_image = ImageSetting.objects.get(name='home_banner_image').file
 
-    #skills
-    skills = Skill.objects.all().order_by('-percentage')
-
-    # experiences
-    experiences = Experience.objects.all()
-
-    # education
-    educations = Education.objects.all()
-
-    # document
     documents = Document.objects.all()
 
     context = {
@@ -39,10 +29,27 @@ def index(request):
         'about_myself_welcome': about_myself_welcome,
         'about_myself_footer': about_myself_footer,
         'home_banner_image': home_banner_image,
+        'documents': documents
+    }
+
+    return context
+
+def index(request):
+
+    #skills
+    skills = Skill.objects.all().order_by('-percentage')
+
+    # experiences
+    experiences = Experience.objects.all()
+
+    # education
+    educations = Education.objects.all()
+
+
+    context = {
         'skills': skills,
         'experiences': experiences,
         'educations': educations,
-        'documents': documents,
     }
 
     return render(request, 'index.html', context=context)
